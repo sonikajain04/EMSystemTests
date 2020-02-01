@@ -15,15 +15,10 @@ public class ExpenseManagerSystemTest {
 	public void titleTest1() throws Exception{
 		WebDriver driver;
 		driver = new HtmlUnitDriver();
-		driver.get("http://localhost:8089/ExpenseApp-1/login.jsp");	
-		//Thread.sleep(600000);
-
-		//Buggy Code
-		String expectedTitle = "Hello Page";
-		
-		//Correct Code
-		//String expectedTitle = "Login page";
-		
+		Thread.sleep(10000);
+		driver.get("http://localhost:8089/ExpenseApp-1/login.jsp");
+		// Set the Expected title as Login Page to pass the test
+		String expectedTitle = "Login Page";
 		String actualTitle = driver.getTitle();
 		assertEquals(expectedTitle, actualTitle);
         System.out.println(actualTitle);
